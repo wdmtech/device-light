@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Device light (ambient light sensor) experiment</title>
+
+  <style>
+    body {
+      text-align: center;
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="devicelightValue">0</div>
+
+  <script>
+    window.addEventListener('devicelight', function (event) {
+
+      var html = document.getElementsByTagName('html')[0];
+      var devicelightValue = document.getElementById('devicelightValue')
+
+      devicelightValue.innerText = event.value
+      devicelightValue.style.fontSize = (event.value + 10) + 'px'
+
+    })
+  </script>
+
+</body>
+
+</html>
